@@ -63,10 +63,10 @@
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="{{ route('blog.edit', $blog->slug) }}"><i class="bx bx-edit-alt me-1"></i> Edit</a></li>
                       <li>
-                        <form action="{{ route('blog.destroy', $blog->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this blog?');">
+                        <form action="{{ route('blog.destroy', $blog->id) }}" method="POST" id="delete-form">
                           @csrf
                           @method('DELETE')
-                          <button type="submit" class="dropdown-item text-danger"><i class="bx bx-trash me-1"></i> Delete</button>
+                          <button id="delete-button" type="submit" class="dropdown-item text-danger"><i class="bx bx-trash me-1"></i> Delete</button>
                         </form>
                       </li>
                     </ul>
